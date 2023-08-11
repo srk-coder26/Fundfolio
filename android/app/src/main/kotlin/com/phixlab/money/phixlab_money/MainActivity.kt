@@ -1,6 +1,6 @@
-package com.phixlab.money.phixlab_money
+package com.srk.fundfolio
 
-import io.flutter.embedding.android.FlutterActivity
+import io.flutter.embedding.android.FlutterFragmentActivity
 
-class MainActivity: FlutterActivity() {
+class MainActivity: FlutterFragmentActivity() {
 }

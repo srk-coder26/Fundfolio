@@ -2,6 +2,10 @@
 
 A new Flutter project.
 
+https://icon.kitchen/i/H4sIAAAAAAAAA6tWKkvMKU0tVrKqVkpJLMoOyUjNTVWySkvMKU6t1VHKzU8pzQHJRisl5qUU5WemKOkoZeYXA8ny1CSl2FoApT8%2BHkAAAAA%3D
+
+https://www.appicon.co/
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
