@@ -19,13 +19,7 @@ class _SplashPageState extends State<SplashPage> {
     WidgetsFlutterBinding.ensureInitialized();
     GoogleSheetsApi().init();
     goToHome();
-    // navigate();
     super.initState();
-  }
-
-  navigate() async {
-    await Future.delayed(const Duration(milliseconds: 3000));
-    Get.offAll(() => const InternetChecker());
   }
 
   void goToHome() async {

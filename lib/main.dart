@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fundfolio/services/internet_checker.dart';
+import 'package:fundfolio/screens/splash_screen.dart';
 import 'package:fundfolio/utils/theme/theme.dart';
 import 'package:get/get.dart';
 
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       theme: GAppTheme.lightTheme,
       darkTheme: GAppTheme.darkTheme,
       themeMode: ThemeMode.system,
-      home: const InternetChecker(),
+      home: const SplashPage(),
     );
   }
 }

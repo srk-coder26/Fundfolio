@@ -29,9 +29,9 @@ class _InternetCheckerState extends State<InternetChecker> {
     subscription = Connectivity()
         .onConnectivityChanged
         .listen((ConnectivityResult result) async {
-      final hasInternet = await InternetConnectionChecker().hasConnection;
+      final haveInternet = await InternetConnectionChecker().hasConnection;
 
-      setState(() => this.hasInternet = hasInternet);
+      setState(() => hasInternet = haveInternet);
       if (hasInternet == false) {
         final text = hasInternet
             ? "Internet is Connected, But try again after some time"
@@ -40,6 +40,12 @@ class _InternetCheckerState extends State<InternetChecker> {
         showSimpleNotification(
           Text(text, style: Theme.of(context).textTheme.headline4),
           background: color,
+        );
+      } else if (hasInternet == true) {
+        Navigator.pushAndRemoveUntil(
+          context,
+          MaterialPageRoute(builder: (context) => const SplashPage()),
+          (Route<dynamic> route) => false,
         );
       }
     });
@@ -52,38 +58,36 @@ class _InternetCheckerState extends State<InternetChecker> {
   }
 
   @override
-  Widget build(BuildContext context) => hasInternet
-      ? SplashPage()
-      : Scaffold(
-          appBar: AppBar(
-            backgroundColor: Colors.transparent,
-            automaticallyImplyLeading: false,
-            title: Text(
-              "No Internet",
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-            centerTitle: true,
+  Widget build(BuildContext context) => Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.transparent,
+          automaticallyImplyLeading: false,
+          title: Text(
+            "Internet Issue",
+            style: Theme.of(context).textTheme.headlineMedium,
           ),
-          body: SafeArea(
-            child: Padding(
-              padding: const EdgeInsets.only(top: 40,right: 30,left: 30),
-              child: Center(
-                  child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Lottie.asset(
-                    "assets/images/no_net.json",
-                    reverse: true,
-                    repeat: true,
-                    fit: BoxFit.cover,
-                  ),
-                  Text(
-                    "Opps!, Internet has been not connected",
-                    style: Theme.of(context).textTheme.titleLarge,
-                  )
-                ],
-              )),
-            ),
+          centerTitle: true,
+        ),
+        body: SafeArea(
+          child: Padding(
+            padding: const EdgeInsets.only(top: 40, right: 30, left: 30),
+            child: Center(
+                child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Lottie.asset(
+                  "assets/images/no_net.json",
+                  reverse: true,
+                  repeat: true,
+                  fit: BoxFit.cover,
+                ),
+                Text(
+                  "Opps!, Internet has been\nnot connected",
+                  style: Theme.of(context).textTheme.titleLarge,
+                )
+              ],
+            )),
           ),
-        );
+        ),
+      );
 }
