@@ -6,7 +6,6 @@ import 'package:fundfolio/tab_screens/analysis_screen_tab.dart';
 import 'package:fundfolio/tab_screens/profile_screen_tab.dart';
 import 'package:fundfolio/tab_screens/home_screen_tab.dart';
 import 'package:fundfolio/tab_screens/stats_screen_tab.dart';
-import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'package:fundfolio/tab_screens/watchlist_screen_tab.dart';
 
 class MainScreenHost extends StatefulWidget {

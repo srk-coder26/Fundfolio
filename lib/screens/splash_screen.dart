@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fundfolio/screens/auth_screen.dart';
-import 'package:get/get.dart';
-
 import '../services/google_sheets_api.dart';
-import '../services/internet_checker.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({Key? key}) : super(key: key);
